@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--  event@buildwithangga.com -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <title>Challenge BWA</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    </style>
+    <link rel="preload" href="./assets/js/lib/jquery-3.7.1.min.js" as="script">
+    <script src="./assets/js/lib/jquery-3.7.1.min.js"></script>
+</head>
+
+<body class="font-poppins bg-light dark:bg-dark">
+    <main class="flex xl:gap-12 lg:gap-6 w-screen h-auto">
+        <aside class="bg-white dark:bg-[#111933] w-3/12 h-screen sticky top-0">
+            <a href="/" class="flex items-center gap-5 xl:p-10 lg:p-5 border-b-2 border-[#F2F2F2]">
+                <img src="./assets/img/logo.png" alt="Shoe Store" width="52" height="50" loading="lazy">
+                <div class="xl:text-lg lg:text-sm font-semibold text-dark dark:text-light"> Shoe Store <span
+                        class="xl:text-sm lg:text-xs block text-[#9E9E9E] font-normal">Comfortable on the feet</span>
+                </div>
+            </a>
+            <ul class="flex flex-col gap-5 xl:py-10 lg:py-5 lg:mb-6 xl:mb-14">
+                <li class="h-[27px] relative nav-link xl:px-10 lg:px-5 xl:text-lg lg:text-sm"><a href="/src/"
+                        class="hover:text-primary flex items-center gap-[18px]"><img
+                            src="./assets/img/icon/ic-marketplace-active.png" alt="Marketplace" width="24" height="24"
+                            loading="lazy"> Marketplace</a></li>
+                <li class="h-[27px] relative nav-link xl:px-10 lg:px-5 xl:text-lg lg:text-sm"><a href=""
+                        class="flex hover:text-primary items-center gap-[18px]"><img
+                            src="./assets/img/icon/ic-explore.png" alt="Explore" width="24" height="24"
+                            loading="lazy">Explore Product</a>
+                </li>
+                <li class="h-[27px] relative nav-link xl:px-10 lg:px-5 xl:text-lg lg:text-sm"><a href=""
+                        class="flex hover:text-primary items-center gap-[18px]"><img
+                            src="./assets/img/icon/ic-shoe-action.png" alt="Shoe" width="24" height="24"
+                            loading="lazy">Shoe Auction</a></li>
+            </ul>
+            <ul class="flex flex-col gap-5">
+                <li class="xl:text-lg lg:text-sm xl:px-10 lg:px-5 font-medium text-dark dark:text-light">My Account</li>
+                <li class="h-[27px] relative nav-link xl:px-10 lg:px-5 xl:text-lg lg:text-sm"><a href=""
+                        class="flex hover:text-primary items-center gap-[18px]"><img
+                            src="./assets/img/icon/ic-my-order.png" alt="Order" width="24" height="24"
+                            loading="lazy">Your Order</a></li>
+                <li class="h-[27px] relative nav-link xl:px-10 lg:px-5 xl:text-lg lg:text-sm"><a href=""
+                        class="flex hover:text-primary items-center gap-[18px]"><img
+                            src="./assets/img/icon/ic-notif.png" alt="Notifications" width="24" height="24"
+                            loading="lazy">Notifications</a></li>
+                <li class="h-[27px] relative nav-link xl:px-10 lg:px-5 xl:text-lg lg:text-sm"><a href=""
+                        class="flex hover:text-primary items-center gap-[18px]"><img
+                            src="./assets/img/icon/ic-favorite.png" alt="Favorites" width="24" height="24"
+                            loading="lazy">Favorites Shoes</a></li>
+                <li class="h-[27px] relative nav-link xl:px-10 lg:px-5 xl:text-lg lg:text-sm"><a href=""
+                        class="flex hover:text-primary items-center gap-[18px]"><img
+                            src="./assets/img/icon/ic-settings.png" alt="Settings" width="24" height="24"
+                            loading="lazy">Account Settings</a></li>
+            </ul>
+            <div class="xl:px-10 lg:px-5 absolute bottom-[114px] flex justify-between w-full">
+                <span class="flex items-center gap-2 lg:text-sm xl:text-lg font-normal text-[#66696F]">
+                    <img src="./assets/img/icon/ic-theme.png" alt="theme" width="24" height="24" loading="lazy">
+                    Light Mode
+                </span>
+                <button type="button" id="toggleTheme"
+                    class="relative flex gap-2 items-center justify-center bg-[#F5F5F5] dark:bg-dark h-[30px] px-[8px] rounded-full">
+                    <div class="relative z-10" type="button">
+                        <span class="sr-only"></span>
+                        <img src="./assets/img/icon/ic-dark-mode.png" alt="dark mode" width="24" height="24"
+                            loading="lazy">
+                    </div>
+                    <div class="relative z-10" type="button">
+                        <span class="sr-only"></span>
+                        <img src="./assets/img/icon/ic-light-mode.png" alt="ligh mode" width="24" height="24"
+                            loading="lazy">
+                    </div>
+                    <span id="toggle-bg"
+                        class="absolute w-[32px] h-[22px] bg-white rounded-[100px] z-0 translate-x-4 transition-transform duration-500 dark:bg-[#0d1325]"></span>
+                </button>
+            </div>
+            <footer class="xl:px-10 lg:px-5 absolute bottom-14 xl:text-[16px] lg:text-[12px] text-[#C5C5C5]">©2022 Shoe
+                Store. All rights reserved.</footer>
+        </aside>
+        <main
+            class="flex flex-col w-9/12 min-h-screen lg:pt-3 xl:pt-10 lg:pb-4 xl:pb-16 xl:pe-[185px] lg:pe-[150px] xl:gap-16 lg:gap-3">
+            <section class="w-full h-auto flex justify-between items-center">
+                <div class="flex justify-between items-start xl:gap-5 lg:gap-3 ">
+                    <img class="w-[60px] h-auto aspect-square rounded-full overflow-hidden object-cover object-center"
+                        src="./assets/img/profile-dummy.png" alt="user name" width="60" height="60" loading="lazy">
+                    <div class="flex flex-col gap-1">
+                        <div class="xl:text-[26px] lg:text-lg font-semibold text-[#0B102C] dark:text-light">Good
+                            Morning, Yeager</div>
+                        <span class="xl:text-[16px] font-medium lg:text-sm text-[#9E9E9E]">Finish your profile. <a
+                                href="" class="text-[#627EEA]">Edit now</a></span>
+                    </div>
+                </div>
+                <div class="flex items-center xl:gap-8 lg:gap-4">
+                    <form class="flex items-center gap-2 relative">
+                        <img class="absolute translate-x-2 flex-shrink-0 object-contain"
+                            src="./assets/img/icon/ic-search.png" alt="search" width="24" height="11.92" loading="lazy">
+                        <input
+                            class="focus:outline-none dark:bg-[#111933] dark:text-light w-full lg:rounded-lg xl:rounded-xl lg:h-8 xl:h-[50px] xl:ps-15 lg:ps-10 xl:pe-10 lg:pe-5 xl:text-sm lg:text-xs text-dark placeholder:xl:text-sm placeholder:lg:text-xs"
+                            type="search" name="search" id="search" placeholder="Search shoes">
+                        <button type="submit" class="hidden"><span class="sr-only"></span></button>
+                    </form>
+                    <button type="button"
+                        class=" xl:p-3 lg:p-2 bg-white dark:bg-[#111933] rounded-full hover:rotate-45 transition-all origin-center">
+                        <span class="sr-only"></span>
+                        <img src="./assets/img/icon/ic-settings.png" width="19" height="19" loading="lazy"
+                            alt="settings">
+                    </button>
+                </div>
+            </section>
+            <section class="w-full h-auto flex flex-col lg:gap-3 xl:gap-5">
+                <div class="flex justify-between items-center">
+                    <div class="xl:text-2xl lg:text-lg font-semibold text-dark">Exclusive Product From Nike</div>
+                    <a href="" class="text-primary xl:text-sm lg:text-xs font-medium">View All Shoes</a>
+                </div>
+                <div class="flex gap-6">
+                    <div
+                        class="w-1/3 lg:h-auto xl:h-[336px] bg-white dark:bg-[#0d1325] lg:rounded-2xl xl:rounded-3xl xl:p-5 lg:p-3">
+                        <div class="w-full h-auto aspect-[3/2] xl:rounded-xl lg:rounded-lg overflow-hidden">
+                            <img class="w-full h-full object-cover object-center" src="./assets/img/product-1.png"
+                                alt="product name" width="1000" height="1000" loading="lazy">
+                        </div>
+                        <div class="flex items-center justify-between mt-3">
+                            <div class="xl:text-[16px] lg:text-sm font-semibold text-dark dark:text-light">
+                                <span class="block mb-[2px] xl:text-xs lg:text-[10px] font-normal text-[#9E9E9E]">7
+                                    Colours</span>
+                                Nike Red Shoe 77
+                            </div>
+                            <button type="button" class="like-act">
+                                <span class="sr-only"></span>
+                                <img class="like" src="./assets/img/icon/ic-like.png" alt="like" width="24" height="24"
+                                    loading="lazy">
+                                <img class="like-active hidden" src="./assets/img/icon/ic-like-active.png" alt="like"
+                                    width="24" height="24" loading="lazy">
+                            </button>
+                        </div>
+                        <div class="flex justify-between items-center mt-4">
+                            <div class="xl:text-xs lg:text-[10px] font-normal text-[#9E9E9E]">
+                                Price
+                                <span class="block text-primary xl:text-lg lg:text-sm font-medium">Rp.200.000</span>
+                            </div>
+                            <button type="button"
+                                class="buy-act xl:px-6 xl:py-3 lg:px-3 lg:py-2 hover:bg-primary hover:text-white  bg-white dark:bg-dark border border-primary text-primary xl:text-sm lg:text-xs font-medium rounded-xl">Buy
+                                Now</button>
+                        </div>
+                    </div>
+                    <div
+                        class="w-1/3 lg:h-auto xl:h-[336px] bg-white dark:bg-[#0d1325] lg:rounded-2xl xl:rounded-3xl xl:p-5 lg:p-3">
+                        <div class="w-full h-auto aspect-[3/2] xl:rounded-xl lg:rounded-lg overflow-hidden">
+                            <img class="w-full h-full object-cover object-center" src="./assets/img/product-2.png"
+                                alt="product name" width="1000" height="1000" loading="lazy">
+                        </div>
+                        <div class="flex items-center justify-between mt-3">
+                            <div class="xl:text-[16px] lg:text-sm font-semibold text-dark dark:text-light">
+                                <span class="block mb-[2px] xl:text-xs lg:text-[10px] font-normal text-[#9E9E9E]">
+                                    4 Colours
+                                </span>
+                                Nike Airforce uHigh
+                            </div>
+                            <button type="button" class="like-act">
+                                <span class="sr-only"></span>
+                                <img class="like" src="./assets/img/icon/ic-like.png" alt="like" width="24" height="24"
+                                    loading="lazy">
+                                <img class="like-active hidden" src="./assets/img/icon/ic-like-active.png" alt="like"
+                                    width="24" height="24" loading="lazy">
+                            </button>
+                        </div>
+                        <div class="flex justify-between items-center mt-4">
+                            <div class="xl:text-xs lg:text-[10px] font-normal text-[#9E9E9E]">
+                                Price
+                                <span class="block text-primary xl:text-lg lg:text-sm font-medium">Rp.250.000</span>
+                            </div>
+                            <button type="button"
+                                class="buy-act xl:px-6 xl:py-3 lg:px-3 lg:py-2 hover:bg-primary hover:text-white  bg-white dark:bg-dark border border-primary text-primary xl:text-sm lg:text-xs font-medium rounded-xl">Buy
+                                Now</button>
+                        </div>
+                    </div>
+                    <div
+                        class="w-1/3 lg:h-auto xl:h-[336px] bg-white dark:bg-[#0d1325] lg:rounded-2xl xl:rounded-3xl xl:p-5 lg:p-3">
+                        <div class="w-full h-auto aspect-[3/2] xl:rounded-xl lg:rounded-lg overflow-hidden">
+                            <img class="w-full h-full object-cover object-center" src="./assets/img/product-3.png"
+                                alt="product name" width="1000" height="1000" loading="lazy">
+                        </div>
+                        <div class="flex items-center justify-between mt-3">
+                            <div class="xl:text-[16px] lg:text-sm font-semibold text-dark dark:text-light">
+                                <span class="block mb-[2px] xl:text-xs lg:text-[10px] font-normal text-[#9E9E9E]">
+                                    2 Colours
+                                </span>
+                                Nike Kiger 1 Mid
+                            </div>
+                            <button type="button" class="like-act">
+                                <span class="sr-only"></span>
+                                <img class="like" src="./assets/img/icon/ic-like.png" alt="like" width="24" height="24"
+                                    loading="lazy">
+                                <img class="like-active hidden" src="./assets/img/icon/ic-like-active.png" alt="like"
+                                    width="24" height="24" loading="lazy">
+                            </button>
+                        </div>
+                        <div class="flex justify-between items-center mt-4">
+                            <div class="xl:text-xs lg:text-[10px] font-normal text-[#9E9E9E]">
+                                Price
+                                <span class="block text-primary xl:text-lg lg:text-sm font-medium">Rp.990.000</span>
+                            </div>
+                            <button type="button"
+                                class="buy-act xl:px-6 xl:py-3 lg:px-3 lg:py-2 hover:bg-primary hover:text-white  bg-white dark:bg-dark border border-primary text-primary xl:text-sm lg:text-xs font-medium rounded-xl">Buy
+                                Now</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="w-full h-auto flex flex-col lg:gap-4 xl:gap-8">
+                <div class="xl:text-2xl lg:text-lg font-semibold text-dark">Best Store In This Month</div>
+                <div class="flex lg:gap-4 xl:gap-6">
+                    <div
+                        class="w-1/2 lg:h-auto xl:h-[343px] bg-white dark:bg-[#0d1325] lg:rounded-2xl xl:rounded-3xl xl:p-6 lg:p-3">
+                        <div class=" flex gap-4 w-full h-[100px] mb-[52px]">
+                            <div class="h-full w-1/5 xl:rounded-xl lg:rounded-lg overflow-hidden">
+                                <img class="h-full w-full object-cover object-center" src="./assets/img/product-5.png"
+                                    alt="product name" width="1000" height="1000" loading="lazy">
+                            </div>
+                            <div class="relative h-full w-3/5">
+                                <img class="h-full w-full object-cover object-center xl:rounded-xl lg:rounded-lg"
+                                    src="./assets/img/product-4.png" alt="product name" width="1000" height="1000"
+                                    loading="lazy">
+                                <div class="absolute inset-0 z-10 flex items-center justify-center translate-y-1/2">
+                                    <img class="w-65 h-65 aspect-square object-cover object-center rounded-full outline outline-8 outline-[rgba(255,255,255,0.35)]"
+                                        src="./assets/img/logo-adidas.png" alt="addidas" width="65" height="65"
+                                        loading="lazy">
+                                </div>
+                            </div>
+                            <div class="h-full w-1/5 xl:rounded-xl lg:rounded-lg overflow-hidden">
+                                <img class="h-full w-full object-cover object-center" src="./assets/img/product-6.png"
+                                    alt="product name" width="1000" height="1000" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-5">
+                            <a href="" class="flex flex-col gap-[2px] text-[#9E9E9E] font-normal text-xs">
+                                <span
+                                    class="flex gap-[2px] items-center text-lg text-dark dark:text-light font-semibold">Adidas
+                                    Store
+                                    <img src="./assets/img/icon/ic-verified.png" alt="verified" width="14" height="14"
+                                        loading="lazy"></span>
+                                @adidasindonesia
+                            </a>
+                            <div class="flex items-center gap-3">
+                                <a href="" class="text-primary font-normal text-xs">Visit Store</a>
+                                <button type="button"
+                                    class="border border-primary text-primary hover:bg-primary hover:text-white font-medium text-xs rounded-full px-4 py-[10px]">Following</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between px-5 py-4 bg-[#FBFBFB] dark:bg-dark rounded-xl">
+                            <div class="text-xs font-normal text-[#748C9E] dark:text-light">
+                                <span class="text-lg font-semibold text-dark block dark:text-[#FBFBFB]">1.569</span>
+                                Total shoes
+                            </div>
+                            <span class="h-[46px] w-[1px] bg-[#EDEDED]"></span>
+                            <div class="text-xs font-normal text-[#748C9E] dark:bg-dark">
+                                <span class="text-lg font-semibold text-dark block dark:text-[#FBFBFB]">5.2M</span>
+                                Total followers
+                            </div>
+                            <span class="h-[46px] w-[1px] bg-[#EDEDED]"></span>
+                            <div class="text-xs font-normal text-[#748C9E] dark:bg-dark">
+                                <span class="text-lg font-semibold text-dark block dark:text-[#FBFBFB]">56</span>
+                                Exclusive Shoe
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="w-1/2 lg:h-auto xl:h-[343px] bg-white dark:bg-[#0d1325] lg:rounded-2xl xl:rounded-3xl xl:p-6 lg:p-3">
+                        <div class=" flex gap-4 w-full h-[100px] mb-[52px]">
+                            <div class="h-full w-1/5 xl:rounded-xl lg:rounded-lg overflow-hidden">
+                                <img class="h-full w-full object-cover object-center" src="./assets/img/product-7.png"
+                                    alt="product name" width="1000" height="1000" loading="lazy">
+                            </div>
+                            <div class="relative h-full w-3/5">
+                                <img class="h-full w-full object-cover object-center xl:rounded-xl lg:rounded-lg"
+                                    src="./assets/img/product-9.png" alt="product name" width="1000" height="1000"
+                                    loading="lazy">
+                                <div class="absolute inset-0 z-10 flex items-center justify-center translate-y-1/2">
+                                    <img class="w-65 h-65 aspect-square object-cover object-center rounded-full outline outline-8 outline-[rgba(255,255,255,0.35)]"
+                                        src="./assets/img/logo-puma.png" alt="addidas" width="65" height="65"
+                                        loading="lazy">
+                                </div>
+                            </div>
+                            <div class="h-full w-1/5 xl:rounded-xl lg:rounded-lg overflow-hidden">
+                                <img class="h-full w-full object-cover object-center" src="./assets/img/product-8.png"
+                                    alt="product name" width="1000" height="1000" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-5">
+                            <a href="" class="flex flex-col gap-[2px] text-[#9E9E9E] font-normal text-xs">
+                                <span
+                                    class="flex gap-[2px] items-center text-lg text-dark dark:text-light font-semibold">Puma
+                                    Store
+                                    <img src="./assets/img/icon/ic-verified.png" alt="verified" width="14" height="14"
+                                        loading="lazy"></span>
+                                @pumaid
+                            </a>
+                            <div class="flex items-center gap-3">
+                                <a href="" class="text-primary font-normal text-xs">Visit Store</a>
+                                <button type="button"
+                                    class="border border-primary text-primary hover:bg-primary hover:text-white font-medium text-xs rounded-full px-4 py-[10px]">Following</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between px-5 py-4 bg-[#FBFBFB] dark:bg-dark rounded-xl">
+                            <div class="text-xs font-normal text-[#748C9E] dark:text-light">
+                                <span class="text-lg font-semibold text-dark block dark:text-[#FBFBFB]">1.362</span>
+                                Total shoes
+                            </div>
+                            <span class="h-[46px] w-[1px] bg-[#EDEDED]"></span>
+                            <div class="text-xs font-normal text-[#748C9E] dark:bg-dark">
+                                <span class="text-lg font-semibold text-dark block dark:text-[#FBFBFB]">5.7M</span>
+                                Total followers
+                            </div>
+                            <span class="h-[46px] w-[1px] bg-[#EDEDED]"></span>
+                            <div class="text-xs font-normal text-[#748C9E] dark:bg-dark">
+                                <span class="text-lg font-semibold text-dark block dark:text-[#FBFBFB]">76</span>
+                                Exclusive Shoe
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </main>
+    <script type="module" src="./assets/js/main.js" defer></script>
+</body>
+
+</html>
